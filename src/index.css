@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Dark theme as default */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 8% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 8% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 190 100% 50%;
+    --primary-foreground: 240 10% 3.9%;
+
+    --secondary: 270 70% 65%;
+    --secondary-foreground: 240 10% 3.9%;
+
+    --accent: 142 76% 36%;
+    --accent-foreground: 0 0% 98%;
+
+    --muted: 240 5% 16%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5% 16%;
+    --input: 240 5% 16%;
+    --ring: 190 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom portfolio colors */
+    --electric-blue: 190 100% 50%;
+    --neon-purple: 270 70% 65%;
+    --neon-green: 142 76% 36%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(190 100% 50%), hsl(270 70% 65%));
+    --gradient-secondary: linear-gradient(135deg, hsl(270 70% 65%), hsl(142 76% 36%));
+    
+    /* Effects */
+    --glow-primary: 0 0 20px hsl(190 100% 50% / 0.5);
+    --glow-secondary: 0 0 20px hsl(270 70% 65% / 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+
+  .glow-secondary {
+    box-shadow: var(--glow-secondary);
+  }
+}

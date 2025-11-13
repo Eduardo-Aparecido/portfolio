@@ -38,28 +38,29 @@ const Index = () => {
   ];
 
   const projects = [
-    {
-      title: "Painel de Chamados",
-      description: "Projeto Full-stack, para administrar abertura de chamados em pequenas empresas",
-      tech: ["HTML", "CSS", "JavaScript", "PHP", "Database"],
-      github: "#",
-      demo: "#",
-    },
-    {
-      title: "Página de Divulgação",
-      description: "Criada para divulgar locais/eventos nas cidades",
-      tech: ["React", "TipeScript", "SupaBase", "Vercel"],
-      github: "#",
-      demo: "#",
-    },
-    {
-      title: "Controle de estoque",
-      description: "Projeto Full-stack, para monitorar o estoque, com visualização de logs e permissionamento",
-      tech: ["HTML", "CSS", "JavaScript", "PHP", "Database"],
-      github: "#",
-      demo: "#",
-    },
-  ];
+  {
+    title: "Painel de Chamados",
+    description: "Projeto Full-stack para administrar abertura de chamados em pequenas empresas.",
+    tech: ["HTML", "CSS", "JavaScript", "PHP", "Database"],
+    github: "https://github.com/Eduardo-Aparecido/painel-de-chamados",
+    demo: "https://painel-chamados.infinityfreeapp.com/",
+  },
+  {
+    title: "Página de Divulgação",
+    description: "Criada para divulgar locais e eventos nas cidades.",
+    tech: ["React", "TypeScript", "Supabase", "Vercel"],
+    github: "https://github.com/Eduardo-Aparecido/ROUTS-PROJECT",
+    demo: "https://routs-project.vercel.app/",
+  },
+  {
+    title: "Controle de Estoque",
+    description: "Projeto Full-stack para monitorar o estoque com logs e permissionamento.",
+    tech: ["HTML", "CSS", "JavaScript", "PHP", "Database"],
+    github: "https://github.com/Eduardo-Aparecido/controle-de-estoque",
+    demo: "https://controle-de-estoque.infinityfree.me/index.php?page=login",
+  },
+];
+
 
   const skills = [
     { name: "Frontend Dev", icon: Code2, color: "electric" },

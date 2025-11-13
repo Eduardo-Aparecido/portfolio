@@ -246,9 +246,16 @@ const Index = () => {
               </p>
               
               <div className="flex flex-wrap gap-4 justify-center">
-                <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                  Download CV
+                <Button
+                  variant="outline"
+                  className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                  asChild
+                >
+                  <a href="/curriculo.jpg" download>
+                    Download CV
+                  </a>
                 </Button>
+
                 <div className="flex gap-4">
                   <Button size="icon" variant="outline" className="border-border hover:border-primary hover:text-primary">
                     <Github size={20} />

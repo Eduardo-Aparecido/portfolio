@@ -14,6 +14,7 @@ import {
   Menu,
   X
 } from "lucide-react";
+import emailjs from "emailjs-com";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -38,29 +39,28 @@ const Index = () => {
   ];
 
   const projects = [
-  {
-    title: "Painel de Chamados",
-    description: "Projeto Full-stack para administrar abertura de chamados em pequenas empresas.",
-    tech: ["HTML", "CSS", "JavaScript", "PHP", "Database"],
-    github: "https://github.com/Eduardo-Aparecido/painel-de-chamados",
-    demo: "https://painel-chamados.infinityfreeapp.com/",
-  },
-  {
-    title: "Página de Divulgação",
-    description: "Criada para divulgar locais e eventos nas cidades.",
-    tech: ["React", "TypeScript", "Supabase", "Vercel"],
-    github: "https://github.com/Eduardo-Aparecido/ROUTS-PROJECT",
-    demo: "https://routs-project.vercel.app/",
-  },
-  {
-    title: "Controle de Estoque",
-    description: "Projeto Full-stack para monitorar o estoque com logs e permissionamento.",
-    tech: ["HTML", "CSS", "JavaScript", "PHP", "Database"],
-    github: "https://github.com/Eduardo-Aparecido/controle-de-estoque",
-    demo: "https://controle-de-estoque.infinityfree.me/index.php?page=login",
-  },
-];
-
+    {
+      title: "Painel de Chamados",
+      description: "Projeto Full-stack para administrar abertura de chamados em pequenas empresas.",
+      tech: ["HTML", "CSS", "JavaScript", "PHP", "Database"],
+      github: "https://github.com/Eduardo-Aparecido/painel-de-chamados",
+      demo: "https://painel-chamados.infinityfreeapp.com/",
+    },
+    {
+      title: "Página de Divulgação",
+      description: "Criada para divulgar locais e eventos nas cidades.",
+      tech: ["React", "TypeScript", "Supabase", "Vercel"],
+      github: "https://github.com/Eduardo-Aparecido/ROUTS-PROJECT",
+      demo: "https://routs-project.vercel.app/",
+    },
+    {
+      title: "Controle de Estoque",
+      description: "Projeto Full-stack para monitorar o estoque com logs e permissionamento.",
+      tech: ["HTML", "CSS", "JavaScript", "PHP", "Database"],
+      github: "https://github.com/Eduardo-Aparecido/controle-de-estoque",
+      demo: "https://controle-de-estoque.infinityfree.me/index.php?page=login",
+    },
+  ];
 
   const skills = [
     { name: "Frontend Dev", icon: Code2, color: "electric" },
@@ -69,12 +69,35 @@ const Index = () => {
     { name: "Mobile Dev", icon: Smartphone, color: "electric" },
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // ✅ Função de envio de email (EmailJS)
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast({
-      title: "Mensagem enviada!",
-      description: "Obrigado por entrar em contato. Entrarei em contato com você em breve.",
-    });
+    const form = e.currentTarget;
+
+    emailjs
+      .sendForm(
+        "service_ko636jg", // seu service_id
+        "template_lzof8mf", // seu template_id
+        form,
+        "c0zGOUPfRD-X1w8i-" // sua public_key
+      )
+      .then(
+        () => {
+          toast({
+            title: "Mensagem enviada!",
+            description: "Obrigado por entrar em contato. Entrarei em contato com você em breve.",
+          });
+          form.reset();
+        },
+        (error) => {
+          toast({
+            title: "Erro ao enviar",
+            description: "Ocorreu um problema. Tente novamente.",
+            variant: "destructive",
+          });
+          console.error(error);
+        }
+      );
   };
 
   return (
@@ -257,16 +280,53 @@ const Index = () => {
                 </Button>
 
                 <div className="flex gap-4">
-                  <Button size="icon" variant="outline" className="border-border hover:border-primary hover:text-primary">
-                    <Github size={20} />
+                  {/* GitHub */}
+                  <Button
+                    size="icon"
+                    variant="outline"
+                    className="border-border hover:border-primary hover:text-primary"
+                    asChild
+                  >
+                    <a
+                      href="https://github.com/Eduardo-Aparecido"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Github size={20} />
+                    </a>
                   </Button>
-                  <Button size="icon" variant="outline" className="border-border hover:border-primary hover:text-primary">
-                    <Linkedin size={20} />
+
+                  {/* LinkedIn */}
+                  <Button
+                    size="icon"
+                    variant="outline"
+                    className="border-border hover:border-primary hover:text-primary"
+                    asChild
+                  >
+                    <a
+                      href="https://www.linkedin.com/in/eduardo-aparecido-b8858753/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Linkedin size={20} />
+                    </a>
                   </Button>
-                  <Button size="icon" variant="outline" className="border-border hover:border-primary hover:text-primary">
-                    <Mail size={20} />
+
+                  {/* Email */}
+                  <Button
+                    size="icon"
+                    variant="outline"
+                    className="border-border hover:border-primary hover:text-primary"
+                    asChild
+                  >
+                    <a
+                      href="mailto:aparecidoj.edu@gmail.com?subject=Contato%20via%20Portfólio&body=Olá%20Eduardo,%20tudo%20bem?%20Gostaria%20de%20falar%20sobre..."
+                    >
+                      <Mail size={20} />
+                    </a>
                   </Button>
                 </div>
+
               </div>
             </Card>
           </motion.div>
@@ -412,46 +472,25 @@ const Index = () => {
                   <label htmlFor="name" className="block text-sm font-medium mb-2 text-foreground">
                     Nome
                   </label>
-                  <Input
-                    id="name"
-                    placeholder="Seu nome"
-                    required
-                    className="bg-background border-border focus:border-primary"
-                  />
+                  <Input name="name" placeholder="Seu nome" required />
                 </div>
 
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium mb-2 text-foreground">
                     Email
                   </label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="Seu.email@exemplo.com"
-                    required
-                    className="bg-background border-border focus:border-primary"
-                  />
+                  <Input name="email" type="email" placeholder="Seu.email@exemplo.com" required />
                 </div>
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium mb-2 text-foreground">
                     Mensagem
                   </label>
-                  <Textarea
-                    id="message"
-                    placeholder="Deixe uma mensagem..."
-                    rows={5}
-                    required
-                    className="bg-background border-border focus:border-primary resize-none"
-                  />
+                  <Textarea name="message" placeholder="Deixe uma mensagem..." rows={5} required />
                 </div>
 
-                <Button 
-                  type="submit" 
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground glow-primary"
-                >
-                  <Send size={20} className="mr-2" />
-                  Enviar Mensagem
+                <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground glow-primary">
+                  <Send size={20} className="mr-2" /> Enviar Mensagem
                 </Button>
               </form>
 

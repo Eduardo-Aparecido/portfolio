@@ -4,6 +4,7 @@ import {
   Github, 
   Linkedin, 
   Mail, 
+  MessageCircle,
   ExternalLink, 
   Code2, 
   Palette, 
@@ -12,7 +13,8 @@ import {
   Send,
   ChevronDown,
   Menu,
-  X
+  X,
+  Code2Icon
 } from "lucide-react";
 import emailjs from "emailjs-com";
 import { Button } from "@/components/ui/button";
@@ -63,10 +65,10 @@ const Index = () => {
   ];
 
   const skills = [
-    { name: "Frontend Dev", icon: Code2, color: "electric" },
-    { name: "UI/UX Design", icon: Palette, color: "neon-purple" },
-    { name: "Backend Dev", icon: Database, color: "neon-green" },
-    { name: "Mobile Dev", icon: Smartphone, color: "electric" },
+    { name: "Frontend Dev", icon: Palette, color: "electric" },
+    { name: "Backend Dev", icon: Code2, color: "neon-green" },
+    { name: "Banco de Dados", icon: Database, color: "neon-purple" },
+    
   ];
 
   // ✅ Função de envio de email (EmailJS)
@@ -320,9 +322,14 @@ const Index = () => {
                     asChild
                   >
                     <a
-                      href="mailto:aparecidoj.edu@gmail.com?subject=Contato%20via%20Portfólio&body=Olá%20Eduardo,%20tudo%20bem?%20Gostaria%20de%20falar%20sobre..."
+                      href={`https://wa.me/5515997607098?text=${encodeURIComponent(
+                        "Olá Eduardo! Vim através do seu portfólio e gostaria de conversar com você."
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground transition-colors hover:text-[#25D366]"
                     >
-                      <Mail size={20} />
+                      <MessageCircle size={24} />
                     </a>
                   </Button>
                 </div>
@@ -406,7 +413,7 @@ const Index = () => {
               Minhas <span className="gradient-text">Skills</span>
             </h2>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center">
               {skills.map((skill, index) => (
                 <motion.div
                   key={skill.name}
@@ -420,7 +427,7 @@ const Index = () => {
                     <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
                       <skill.icon size={32} className="text-primary" />
                     </div>
-                    <h3 className="text-xl font-semibold text-foreground">{skill.name}</h3>
+                    <h3 className="text-xl font-semibold text-center">{skill.name}</h3>
                   </Card>
                 </motion.div>
               ))}
@@ -496,26 +503,32 @@ const Index = () => {
 
               <div className="mt-8 flex justify-center gap-6">
                 <a 
-                  href="https://github.com" 
+                  href="https://github.com/Eduardo-Aparecido" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Github size={24} />
                 </a>
+
                 <a 
-                  href="https://linkedin.com" 
+                  href="https://www.linkedin.com/in/eduardo-aparecido-b8858753/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Linkedin size={24} />
                 </a>
-                <a 
-                  href="mailto:contact@example.com"
-                  className="text-muted-foreground hover:text-primary transition-colors"
+
+                <a
+                  href={`https://wa.me/5515997607098?text=${encodeURIComponent(
+                    "Olá Eduardo! Vim através do seu portfólio e gostaria de conversar com você."
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground transition-colors hover:text-[#25D366]"
                 >
-                  <Mail size={24} />
+                  <MessageCircle size={24} />
                 </a>
               </div>
             </Card>

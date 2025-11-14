@@ -260,14 +260,13 @@ const Index = () => {
             
             <Card className="p-8 md:p-12 bg-card/50 backdrop-blur border-border/50">
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Sou um desenvolvedor web e designer apaixonado, 
-                com um olhar aguçado para criar experiências digitais bonitas e funcionais. 
-                Minha jornada na tecnologia tem sido movida pela curiosidade e pelo desejo constante de aprender e inovar.
+                Estou dando meus primeiros passos como desenvolvedor Full Stack, sempre aprendendo e evoluindo.
+                A tecnologia entrou na minha vida pela curiosidade e hoje virou uma paixão.
+                Gosto de criar interfaces, funcionais, atuais e que realmente façam sentido para quem usa.
               </p>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Especializado em tecnologias web modernas, 
-                preencho a lacuna entre design e desenvolvimento para oferecer experiências de usuário perfeitas. 
-                Do conceito à implantação, garanto que cada projeto seja elaborado com atenção aos detalhes e ao desempenho.
+                Ainda estou estudando e aprimorando minhas habilidades, mas cada projeto que desenvolvo é feito com muito cuidado e vontade de entregar algo melhor que o anterior.
+                Meu foco é unir design e desenvolvimento para criar experiências simples, fluidas e bem pensadas, do início ao fim.
               </p>
               
               <div className="flex flex-wrap gap-4 justify-center">

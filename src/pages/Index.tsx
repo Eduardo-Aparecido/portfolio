@@ -275,7 +275,7 @@ const Index = () => {
                   className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
                   asChild
                 >
-                  <a href="/curriculo.jpg" download>
+                  <a href="/Dev - Eduardo Aparecido Jesus de Paula.pdf" download>
                     Download CV
                   </a>
                 </Button>

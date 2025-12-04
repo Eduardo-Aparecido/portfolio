@@ -57,7 +57,7 @@ const Index = () => {
     },
     {
       title: "Controle de Estoque",
-      description: "Projeto Full-stack para monitorar o estoque com logs e permissionamento. (User: admin / senha: admin123)",
+      description: "Projeto Full-stack para monitorar o estoque com logs e permissionamento. (Perfil: Administrador / E-mail: admin@admin.com / senha: admin123)",
       tech: ["HTML", "CSS", "JavaScript", "PHP", "Database"],
       github: "https://github.com/Eduardo-Aparecido/controle-de-estoque",
       demo: "https://controle-de-estoque.infinityfree.me/index.php?page=login",

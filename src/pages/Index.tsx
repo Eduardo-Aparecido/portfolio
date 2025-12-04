@@ -57,7 +57,7 @@ const Index = () => {
     },
     {
       title: "Cardápio Digital",
-      description: "Desenvolvido para aposenta o cardápio físico, facilitando a atualização de itens e preços.",
+      description: "Desenvolvido para aposentar o cardápio físico, facilitando a atualizações de itens e preços.",
       tech: ["React", "TypeScript", "Supabase", "Vercel"],
       github: "https://github.com/Eduardo-Aparecido/cardapio-digital",
       demo: "https://menully.vercel.app/",

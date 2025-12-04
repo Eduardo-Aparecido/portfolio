@@ -42,11 +42,11 @@ const Index = () => {
 
   const projects = [
     {
-      title: "Painel de Chamados",
-      description: "Projeto Full-stack para administrar abertura de chamados em pequenas empresas.",
-      tech: ["HTML", "CSS", "JavaScript", "PHP", "Database"],
-      github: "https://github.com/Eduardo-Aparecido/painel-de-chamados",
-      demo: "https://painel-chamados.infinityfreeapp.com/",
+      title: "Cardápio Digital",
+      description: "Desenvolvido para aposentar o cardápio físico, facilitando a atualizações de itens e preços.",
+      tech: ["React", "TypeScript", "Supabase", "Vercel"],
+      github: "https://github.com/Eduardo-Aparecido/cardapio-digital",
+      demo: "https://menully.vercel.app/",
     },
     {
       title: "Página de Divulgação",
@@ -57,10 +57,10 @@ const Index = () => {
     },
     {
       title: "Cardápio Digital",
-      description: "Desenvolvido para aposentar o cardápio físico, facilitando a atualizações de itens e preços.",
-      tech: ["React", "TypeScript", "Supabase", "Vercel"],
-      github: "https://github.com/Eduardo-Aparecido/cardapio-digital",
-      demo: "https://menully.vercel.app/",
+      description: "Projeto Full-stack para monitorar o estoque com logs e permissionamento. (User: admin / senha: admin123)",
+      tech: ["HTML", "CSS", "JavaScript", "PHP", "Database"],
+      github: "https://github.com/Eduardo-Aparecido/controle-de-estoque",
+      demo: "https://controle-de-estoque.infinityfree.me/index.php?page=login",
     },
   ];
 
